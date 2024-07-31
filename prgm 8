@@ -1,0 +1,21 @@
+#include <LPC214x.H> // Device header for LPC214x series
+unsigned int factorial(unsigned int n) {
+ unsigned int result = 1;
+ unsigned int i;
+ for ( i = 1; i <= n; ++i) {
+ result *= i;
+ }
+ return result;
+}
+int main(void) {
+ unsigned int num = 5; // Number to calculate the factorial of
+ unsigned int result;
+ // Calculate the factorial
+ result = factorial(num);
+ // Endless loop to keep the program running
+ while (1) {
+ // Use a debugger to inspect the value of 'result'
+ }
+ // Return 0 (not necessary as this point will never be reached)
+ return 0;
+}
