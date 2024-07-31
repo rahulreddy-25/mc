@@ -1,0 +1,23 @@
+#include <LPC214x.H>
+// Convert uppercase to lowercase (and vice versa) 
+char convertCase(char c) {
+ if (c >= 'A' && c <= 'Z') {
+ // Convert uppercase to lowercase
+ return c =c+32;
+ } else if (c >= 'a' && c <= 'z') {
+ // Convert lowercase to uppercase
+ return c =c-32;
+ }
+ // Return unchanged for non-alphabetic characters
+ return c;
+}
+int main() {
+ int i;
+ char input[] = "AaBb"; // Your input string
+ int len = sizeof(input) - 1; // Exclude the null terminator
+ for (i = 0; i < len; ++i) {
+ input[i] = convertCase(input[i]);
+ }
+ //printf("Converted string: %s\n", input);
+ return 0;
+}
